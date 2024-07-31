@@ -1,0 +1,427 @@
+
+/* обнуления для сафари */
+input[type="search"] {
+    -webkit-appearance: none;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+/* пропустил  в sass*/
+a:focus,
+a:active {
+    outline: none;
+}
+
+
+/* ---------------------------------------------------------- */
+/* Стилизация слайдера */
+#slider {
+    width: 100%;
+    height: 8px;
+    background-color: white;
+    /* transform: translate(13px,0%); 
+    /* Белый цвет фона */
+}
+
+/* Стилизация ползунков */
+.noUi-handle {
+    fill: var(--white, #FFF);
+    stroke-width: 1px;
+    stroke: var(--gray-200, #E5E7EB);
+    filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.08));
+    width: 22px;
+    height: 10px;
+    background: #FFF;
+    border-radius: 10px;
+    transform: translate(0, -5px);
+    cursor: pointer;
+    
+}
+
+.noUi-handle::before,
+.noUi-handle::after {
+    display: none;
+}
+
+.noUi-connect {
+    background: #1C64F2;
+}
+
+.noUi-horizontal .noUi-handle {
+    width: 27px;
+    height: 26px;
+    right: -17px;
+    top: -6px;
+}
+
+
+/* -------------------------------------------- бегущая строка ----------------------------------------------- */
+
+  .items-wrap {
+    position: relative;
+    display: flex;
+     overflow: hidden; 
+    user-select: none;
+    gap: 20px;
+
+}  
+
+
+        
+
+
+ .items {
+    flex-shrink: 0;
+    display: flex;
+    gap: 20px;
+    
+    justify-content: space-around;
+    min-width: 100%;
+} 
+
+.marquee {
+    animation: scroll 10s linear infinite;
+}
+
+.reverce {
+    animation-direction: reverse;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100% - 20px));
+    }
+}
+
+/* Применяем анимацию к элементу с классом animate-marquee */
+.animate-marquee {
+    animation: marquee 15s linear infinite;
+    white-space: nowrap;
+    /* Предотвращаем перенос текста */
+    transform: translateX(100%);
+    /* Начальное положение за пределами видимой области */
+    display: inline-flex;
+    /* Элементы будут бегать горизонтально в строке */
+}
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------------ */
+/* cкрол бар */
+
+/* Стилизация ширины и цвета скроллбара */
+::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #2563EB;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2563EB;
+    border-radius: 3px;
+}
+
+/* ---------------------------------- свайпер ------------------------------------------ */
+
+.swiper-pagination-bullet {
+background: var(--gray-400, hsla(0, 0%, 0%, 0.405));
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+    margin-right: 15px;
+ 
+}
+
+.swiper-pagination-bullet-active {
+    background: #FFF;
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+}
+
+.images-product__slider {
+    position: relative;
+}
+.swiper-pagination {
+    transform: translate(0,-25px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.swiper-button-prev-1 {
+    width: 48px;
+    height: 48px;
+    background: var(--blue-500, #3F83F8);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    z-index: 25;
+    transform: translate(0,-50%);
+    @media (max-width: 600px) {
+        left: 15px;
+    }
+}
+.swiper-button-next-1 {
+    width: 48px;
+    height: 48px;
+    background: var(--blue-500, #3F83F8);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    z-index: 25;
+    transform: translate(0, -50%);
+    @media (max-width: 600px) {
+        right: 15px;
+    }
+}
+.swiper-button-disabled {
+    background: var(--blue-500, #3f83f84a);
+    
+}
+
+
+
+
+.images-preview {
+
+    @media (min-width: 991.98px) {
+        margin-top: -110px;
+
+    }
+
+
+}
+/* -------------------------------------------------- */
+.box__post  {
+    height: 144px;
+    overflow: hidden;
+}
+
+
+.box-text {
+    height: 123px;
+    overflow: hidden;
+}
+/* ----------------------------------  фон на странице блог черный на изображение ------------------------------- */
+.bg-gradientBlock {
+    position: relative;
+}
+
+.bg-gradientBlock::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: hsla(0, 0%, 0%, 0.51); */
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%);
+}             
+
+/*  ------------------ ------------ код на кнопки all live sold ------------------------------ */
+
+.tabu-body__item {
+    color: #fff;
+    padding: 10px 50px 8px;
+    background: #6bcd45;
+    transition: background 0.3s ease 0s;
+}
+
+.tabu-body__item:hover {
+    background: var(--primary-600, #1750c1);
+    color: #fff;
+}
+
+.tabu-body__item._activ {
+    background: var(--primary-600, #1C64F2);
+    color: #fff;
+}
+
+.hiden {
+    display: none;
+   
+}
+
+
+ /* ------------------------------------------  sign bg-blue  ----------------------------- */
+
+ .bacg-blue{
+    position: relative;
+  
+ }
+.bacg-blue:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--primary-600, #1C64F2);
+
+}
+.bacg-blue-1 {
+    position: relative;
+
+}
+
+.bacg-blue-1:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--primary-600, #1C64F2);
+
+}
+
+ /* ------------------------------------------  sign bg-blue eye  ----------------------------- */
+ .icon-eye {
+     color: #9CA3AF;
+ }
+
+ .icon-eye-activ {
+     color: #1C64F2;
+ }
+
+ .color {
+    color: #fff;
+ }
+ .color-black {
+     color: #000;
+ }
+
+ /* -------------------- белый фон под регистрацией-------------------------- */
+
+ .popup-bg {
+    background: #fff;
+    overflow: hidden;
+  -webkit-overflow-scrolling: touch; /* Добавление сенсорной прокрутки для Safari */
+
+ }
+ .popup {
+    overflow: hidden;
+  -webkit-overflow-scrolling: touch; /* Добавление сенсорной прокрутки для Safari */
+ }
+
+
+ /* ---  -----    серий фон в активном состоянии на страничке аккаунт на аккордионах------------ */
+
+.button-accordion {
+    /* padding: 6px 8px 6px 8px; */
+    background: #F3F4F6 !important;
+    border-radius: 6px;
+}
+.but-icon {
+    fill: #000;
+    transform: translate(0,-3px);
+    
+}
+
+/* класы на выпадашки в крошках */
+
+.none-breadcrumb {
+    display: none;
+}
+/* ------- классы на блок Our services are available to customers from 62 countries на стр About Us-------- */
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: 1fr;
+    gap: 32px;
+   
+}
+
+@media (max-width: 1028px) {
+    .about-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .about-cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+@media (max-width: 1028px) {
+    .cardd-item:last-child {
+            grid-column: span 2;
+        }
+}
+@media (max-width: 767.98px) {
+    .cardd-item:last-child {
+        grid-column: span 1;
+    }
+}
+
+/*  ---- размытие для веток комента в штмл файле auto pop */
+.blur-class {
+  filter: blur(3px);
+}
+
+
+ /* Запрещаем выделение текста для элемента с классом "no-select" исполюзую на странице auto pop */
+.no-select {
+    user-select: none;
+    -webkit-user-select: none;
+    /* Для старых версий Safari */
+    -moz-user-select: none;
+    /* Для Firefox */
+    -ms-user-select: none;
+    /* Для Internet Explorer/Edge */
+}
+/*-------------- */
+/* ------- стили на мобильное меню ----------*/
+#burger-menu-mobile {
+    position: fixed;
+    /* Используем fixed, чтобы меню оставалось на месте при прокрутке */
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    padding-bottom: 50px;
+    /* Ширина 100% от ширины экрана */
+    height: 100vh;
+    /* Высота 100% от высоты экрана */
+    /* background-color: rgba(0, 0, 0, 0.9); */
+    /* Полупрозрачный фон для затемнения контента */
+    z-index: 50;
+    /* Должен быть выше остальных элементов */
+    overflow: auto;
+    /* Если у вас много контента в меню, добавьте скролл */
+    transform: translateX(-100%);
+    /* Меню скрыто за пределами экрана по умолчанию */
+    transition: transform 0.3s ease;
+    /* Плавное изменение позиции */
+}
+
+#burger-menu-mobile.burger-open {
+    transform: translateX(0);
+    /* Меню отображается */
+}
+
+.no-scroll {
+    overflow: hidden;
+    /* Скрыть скролл на странице при открытом меню */
+}
